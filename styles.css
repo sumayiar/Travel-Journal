@@ -1,0 +1,399 @@
+:root {
+  --midnight: #06102a;
+  --ink: #020712;
+  --frost: #eaf3ff;
+  --glow: #7bf9d7;
+  --aurora: #53ff9d;
+  --aurora-blue: #3ec1ff;
+  --panel: rgba(8, 20, 48, 0.62);
+  --panel-border: rgba(123, 249, 215, 0.25);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  color: var(--frost);
+  font-family: "Space Grotesk", sans-serif;
+  background: radial-gradient(circle at 15% 20%, #11215a 0%, var(--ink) 55%, #01030a 100%);
+}
+
+body {
+  overflow-x: hidden;
+  position: relative;
+}
+
+.sky {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.stars {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(2px 2px at 10% 20%, #fff, transparent 60%),
+    radial-gradient(1px 1px at 35% 45%, #fff, transparent 60%),
+    radial-gradient(1.8px 1.8px at 65% 12%, #fff, transparent 60%),
+    radial-gradient(1px 1px at 80% 35%, #fff, transparent 60%),
+    radial-gradient(2px 2px at 50% 70%, #fff, transparent 60%),
+    radial-gradient(1px 1px at 20% 80%, #fff, transparent 60%),
+    radial-gradient(1.2px 1.2px at 88% 78%, #fff, transparent 60%);
+  animation: pulse 6s ease-in-out infinite;
+}
+
+.aurora {
+  position: absolute;
+  width: 130%;
+  height: 44vh;
+  left: -15%;
+  filter: blur(36px);
+  mix-blend-mode: screen;
+  opacity: 0.36;
+}
+
+.aurora-one {
+  top: 6vh;
+  background: linear-gradient(100deg, transparent, var(--aurora), var(--aurora-blue), transparent);
+  animation: drift 12s ease-in-out infinite;
+}
+
+.aurora-two {
+  top: 22vh;
+  background: linear-gradient(110deg, transparent, #2cffed, #79ff87, transparent);
+  animation: drift 14s ease-in-out infinite reverse;
+}
+
+main {
+  width: min(1080px, 92vw);
+  margin: 0 auto;
+  padding: 3rem 0 4rem;
+}
+
+.top-nav {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.6rem;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #d9e8ff;
+  border: 1px solid rgba(174, 253, 232, 0.3);
+  background: rgba(7, 18, 45, 0.5);
+  padding: 0.45rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.92rem;
+}
+
+.nav-link.active {
+  color: #042410;
+  background: linear-gradient(120deg, #9dffe3, #b0ddff);
+  border-color: transparent;
+  font-weight: 700;
+}
+
+.hero {
+  text-align: center;
+  padding: 4rem 0 2rem;
+}
+
+.eyebrow {
+  margin: 0;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--glow);
+  font-size: 0.86rem;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Bebas Neue", sans-serif;
+  letter-spacing: 0.04em;
+  margin: 0;
+}
+
+h1 {
+  font-size: clamp(2.4rem, 6vw, 5.8rem);
+  line-height: 0.95;
+  max-width: 13ch;
+  margin: 0.75rem auto 1rem;
+}
+
+.lead {
+  max-width: 58ch;
+  margin: 0 auto;
+  color: #d0ddff;
+  line-height: 1.7;
+}
+
+.cta {
+  display: inline-block;
+  margin-top: 1.5rem;
+  text-decoration: none;
+  color: #042410;
+  background: linear-gradient(120deg, #84ffd3, #8ed6ff);
+  padding: 0.75rem 1.2rem;
+  border-radius: 999px;
+  font-weight: 700;
+}
+
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+}
+
+.cta-ghost {
+  color: #d8f4ff;
+  border: 1px solid rgba(157, 255, 227, 0.45);
+  background: rgba(8, 20, 48, 0.4);
+}
+
+.page-hero {
+  padding-top: 2.6rem;
+}
+
+.card-grid {
+  margin-top: 2.2rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  border-radius: 18px;
+  padding: 1.15rem;
+  backdrop-filter: blur(8px);
+}
+
+.card h2 {
+  font-size: 2rem;
+  color: #aefde8;
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  margin: 0 0 0.75rem;
+  color: #e0e9ff;
+}
+
+ul {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+li {
+  margin-bottom: 0.45rem;
+}
+
+.roadmap,
+.wish,
+.country-themes {
+  margin-top: 2.5rem;
+  background: var(--panel);
+  border: 1px solid rgba(142, 214, 255, 0.24);
+  border-radius: 18px;
+  padding: 1.25rem;
+}
+
+.roadmap h2,
+.wish h2,
+.country-themes h2 {
+  font-size: 2.3rem;
+}
+
+.theme-intro {
+  margin: 0.5rem 0 0;
+  color: #d6e7ff;
+}
+
+.country-panel {
+  margin-top: 1.2rem;
+  border-radius: 16px;
+  padding: 1rem;
+  border: 1px solid rgba(123, 249, 215, 0.2);
+}
+
+.iceland-theme {
+  background:
+    radial-gradient(circle at 88% 10%, rgba(111, 250, 219, 0.16), transparent 45%),
+    radial-gradient(circle at 12% 80%, rgba(69, 178, 255, 0.2), transparent 46%),
+    rgba(4, 14, 34, 0.75);
+}
+
+.china-theme {
+  background:
+    radial-gradient(circle at 92% 12%, rgba(255, 157, 69, 0.18), transparent 42%),
+    radial-gradient(circle at 8% 85%, rgba(243, 75, 99, 0.2), transparent 44%),
+    rgba(35, 10, 24, 0.72);
+  border-color: rgba(255, 185, 133, 0.32);
+}
+
+.yemen-theme {
+  background:
+    radial-gradient(circle at 90% 15%, rgba(146, 247, 187, 0.18), transparent 44%),
+    radial-gradient(circle at 10% 80%, rgba(81, 170, 121, 0.2), transparent 45%),
+    rgba(10, 36, 28, 0.72);
+  border-color: rgba(146, 247, 187, 0.34);
+}
+
+.newzealand-theme {
+  background:
+    radial-gradient(circle at 85% 14%, rgba(116, 232, 255, 0.2), transparent 42%),
+    radial-gradient(circle at 12% 88%, rgba(126, 165, 255, 0.21), transparent 44%),
+    rgba(7, 21, 50, 0.74);
+  border-color: rgba(165, 219, 255, 0.34);
+}
+
+.turkey-theme {
+  background:
+    radial-gradient(circle at 88% 12%, rgba(173, 228, 255, 0.18), transparent 44%),
+    radial-gradient(circle at 15% 85%, rgba(255, 205, 135, 0.2), transparent 45%),
+    rgba(20, 24, 54, 0.74);
+  border-color: rgba(182, 230, 255, 0.33);
+}
+
+.australia-theme {
+  background:
+    radial-gradient(circle at 90% 12%, rgba(255, 153, 176, 0.2), transparent 42%),
+    radial-gradient(circle at 14% 86%, rgba(124, 223, 255, 0.2), transparent 45%),
+    rgba(24, 17, 58, 0.74);
+  border-color: rgba(255, 177, 196, 0.32);
+}
+
+.country-header {
+  display: grid;
+  gap: 0.35rem;
+  margin-bottom: 0.9rem;
+}
+
+.country-tag {
+  width: fit-content;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #002110;
+  background: linear-gradient(120deg, #9dffe3, #b0ddff);
+  padding: 0.28rem 0.55rem;
+}
+
+.country-header h3 {
+  font-size: clamp(1.7rem, 4.4vw, 2.4rem);
+}
+
+.theme-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.theme-block {
+  border: 1px solid rgba(174, 253, 232, 0.25);
+  background: rgba(7, 21, 52, 0.58);
+  border-radius: 14px;
+  padding: 0.8rem;
+}
+
+.theme-block h4 {
+  margin: 0 0 0.5rem;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 1.5rem;
+  letter-spacing: 0.04em;
+  color: #abffea;
+}
+
+.timeline {
+  margin-top: 1rem;
+  display: grid;
+  gap: 0.85rem;
+}
+
+.timeline-item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.8rem;
+  align-items: start;
+}
+
+.step {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  color: #07261f;
+  background: linear-gradient(140deg, #a3f9e1, #86d8ff);
+}
+
+blockquote {
+  margin: 0.75rem 0 0;
+  font-size: clamp(1.06rem, 2.4vw, 1.28rem);
+  line-height: 1.6;
+  color: #e9f6ff;
+  border-left: 3px solid #8deddb;
+  padding-left: 0.9rem;
+}
+
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card,
+.roadmap,
+.wish,
+.country-themes,
+.country-panel,
+.theme-block {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 560ms ease, transform 560ms ease;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.86;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes drift {
+  0%,
+  100% {
+    transform: translateX(-2%) translateY(0) scale(1);
+  }
+  50% {
+    transform: translateX(3%) translateY(-2%) scale(1.07);
+  }
+}
+
+@media (max-width: 900px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .theme-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .top-nav {
+    justify-content: center;
+  }
+}
