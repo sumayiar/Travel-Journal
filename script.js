@@ -1,5 +1,5 @@
 const revealTargets = document.querySelectorAll(
-  ".card, .roadmap, .plan-update, .country-themes, .country-panel, .theme-block, .wish"
+  ".card, .roadmap, .plan-update, .essay-panel, .country-themes, .country-panel, .theme-block, .wish"
 );
 
 const observer = new IntersectionObserver(

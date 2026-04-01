@@ -200,7 +200,8 @@ li {
 .roadmap,
 .wish,
 .country-themes,
-.plan-update {
+.plan-update,
+.essay-panel {
   margin-top: 2.5rem;
   background: var(--panel);
   border: 1px solid rgba(142, 214, 255, 0.24);
@@ -211,13 +212,36 @@ li {
 .roadmap h2,
 .wish h2,
 .country-themes h2,
-.plan-update h2 {
+.plan-update h2,
+.essay-panel h2 {
   font-size: 2.3rem;
 }
 
 .current-grid {
   margin-top: 1rem;
   grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.why-grid {
+  margin-top: 1rem;
+}
+
+.why-intro {
+  background:
+    radial-gradient(circle at 88% 10%, rgba(255, 221, 138, 0.12), transparent 42%),
+    radial-gradient(circle at 10% 88%, rgba(128, 232, 255, 0.14), transparent 44%),
+    var(--panel);
+}
+
+.essay-panel {
+  background:
+    linear-gradient(135deg, rgba(13, 29, 60, 0.78), rgba(8, 22, 43, 0.72));
+}
+
+.essay-panel p {
+  max-width: 70ch;
+  color: #dfeaff;
+  line-height: 1.8;
 }
 
 .theme-intro {
@@ -293,6 +317,14 @@ li {
     radial-gradient(circle at 14% 84%, rgba(255, 223, 191, 0.2), transparent 45%),
     rgba(48, 19, 34, 0.74);
   border-color: rgba(255, 197, 218, 0.34);
+}
+
+.maldives-theme {
+  background:
+    radial-gradient(circle at 88% 12%, rgba(111, 239, 255, 0.2), transparent 42%),
+    radial-gradient(circle at 14% 84%, rgba(151, 255, 214, 0.2), transparent 45%),
+    rgba(9, 39, 59, 0.74);
+  border-color: rgba(143, 243, 255, 0.34);
 }
 
 .country-header {
@@ -381,6 +413,7 @@ blockquote {
 .wish,
 .country-themes,
 .plan-update,
+.essay-panel,
 .country-panel,
 .theme-block {
   opacity: 0;
