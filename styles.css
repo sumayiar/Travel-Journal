@@ -199,7 +199,8 @@ li {
 
 .roadmap,
 .wish,
-.country-themes {
+.country-themes,
+.plan-update {
   margin-top: 2.5rem;
   background: var(--panel);
   border: 1px solid rgba(142, 214, 255, 0.24);
@@ -209,8 +210,14 @@ li {
 
 .roadmap h2,
 .wish h2,
-.country-themes h2 {
+.country-themes h2,
+.plan-update h2 {
   font-size: 2.3rem;
+}
+
+.current-grid {
+  margin-top: 1rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .theme-intro {
@@ -357,6 +364,7 @@ blockquote {
 .roadmap,
 .wish,
 .country-themes,
+.plan-update,
 .country-panel,
 .theme-block {
   opacity: 0;
@@ -390,6 +398,10 @@ blockquote {
   }
 
   .theme-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .current-grid {
     grid-template-columns: 1fr;
   }
 
